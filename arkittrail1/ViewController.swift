@@ -13,10 +13,12 @@ import ARKit
 class ViewController: UIViewController, ARSCNViewDelegate {
 
     @IBOutlet var sceneView: ARSCNView!
+    let configuration = ARWorldTrackingConfiguration()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        self.sceneView.debugOptions = [ARSCNDebugOptions.showFeaturePoints, ARSCNDebugOptions.showWorldOrigin]
+        self.sceneView.session.run(configuration)
         // Set the view's delegate
         sceneView.delegate = self
         
@@ -71,5 +73,26 @@ class ViewController: UIViewController, ARSCNViewDelegate {
     func sessionInterruptionEnded(_ session: ARSession) {
         // Reset tracking and/or remove existing anchors if consistent tracking is required
         
+    }
+    @IBAction func ADD(_ sender: Any) {
+        let node = SCNNode()
+        node.geometry = SCNBox(width: 0.1, height: 0.1, length: 0.1, chamferRadius: 0)
+        node.geometry?.firstMaterial?.diffuse.contents = UIColor.blue
+        node.position = SCNVector3(0,0,-0.3)
+        self.sceneView.scene.rootNode.addChildNode(node)
+    }
+    
+    
+    
+    @IBAction func RESET(_ sender: Any) {
+        self.restartSession()
+    }
+    
+    func restartSession(){
+        self.sceneView.session.pause()
+        self.sceneView.scene.rootNode.enumerateChildNodes{ (node, _) in
+            node.removeFromParentNode()
+        }
+        self.sceneView.session.run(configuration, options: [.resetTracking, .removeExistingAnchors])
     }
 }

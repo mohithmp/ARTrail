@@ -1,30 +1,85 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BV1-FR-VrT">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BV1-FR-VrT" customClass="ViewController" customModule="arkittrail1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="U0K-SW-4ec">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E5I-tJ-guP">
+                                <rect key="frame" x="314" y="802" width="80" height="80"/>
+                                <color key="backgroundColor" red="1" green="0.88595628320848085" blue="0.10228613058046299" alpha="0.84705882352941175" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="GRe-bL-2b4"/>
+                                    <constraint firstAttribute="width" constant="80" id="aOw-pV-0rb"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="aU4-Dr-Nrs"/>
+                                    <constraint firstAttribute="height" constant="80" id="dyd-DM-aS4"/>
+                                </constraints>
+                                <state key="normal" title="RESET"/>
+                                <connections>
+                                    <action selector="RESET:" destination="BV1-FR-VrT" eventType="touchUpInside" id="swn-5P-d8v"/>
+                                </connections>
+                            </button>
                             <arscnView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BrB-h1-WRS">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="862"/>
                             </arscnView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xfl-rm-7iA">
+                                <rect key="frame" x="20" y="802" width="80" height="80"/>
+                                <color key="backgroundColor" red="0.95555655498501313" green="1" blue="0.97708869309790403" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="0g6-qH-Hf7"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="80" id="4iB-E1-Qdi"/>
+                                    <constraint firstAttribute="height" constant="80" id="Nn9-b5-vdl"/>
+                                    <constraint firstAttribute="width" constant="80" id="chv-ze-TrM"/>
+                                </constraints>
+                                <state key="normal" title="ADD"/>
+                                <connections>
+                                    <action selector="ADD:" destination="BV1-FR-VrT" eventType="touchUpInside" id="qQi-lT-Ogy"/>
+                                </connections>
+                            </button>
                         </subviews>
-                        <color key="backgroundColor" white="0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="E5I-tJ-guP" secondAttribute="bottom" constant="20" id="0Nq-VX-PvM"/>
+                            <constraint firstItem="Xfl-rm-7iA" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="20" id="2zx-Bb-Ozk"/>
+                            <constraint firstItem="Xfl-rm-7iA" firstAttribute="leading" secondItem="U0K-SW-4ec" secondAttribute="leadingMargin" id="8qc-m7-V8r"/>
+                            <constraint firstItem="E5I-tJ-guP" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" constant="20" id="A7g-ks-w1F"/>
+                            <constraint firstAttribute="bottom" secondItem="Xfl-rm-7iA" secondAttribute="bottom" constant="20" id="AHY-rk-DFy"/>
+                            <constraint firstAttribute="bottom" secondItem="BrB-h1-WRS" secondAttribute="bottom" id="DI2-tR-fif"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" id="GsS-dJ-CKf"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="E5I-tJ-guP" secondAttribute="trailing" constant="20" id="J94-Fx-hDe"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="E5I-tJ-guP" secondAttribute="trailing" constant="20" id="LVw-E4-UCb"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="E5I-tJ-guP" secondAttribute="trailing" constant="20" id="NdZ-xk-SFN"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="E5I-tJ-guP" secondAttribute="trailing" constant="20" id="Q2S-Nc-aH3"/>
+                            <constraint firstItem="E5I-tJ-guP" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Xfl-rm-7iA" secondAttribute="trailing" constant="8" symbolic="YES" id="QbD-Yr-MFL"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" id="VpT-BR-CcM"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="trailing" secondItem="fQZ-KI-GVf" secondAttribute="trailing" id="XyZ-9z-H8e"/>
+                            <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="bbw-Wy-aXQ"/>
+                            <constraint firstAttribute="bottom" secondItem="E5I-tJ-guP" secondAttribute="bottom" constant="20" id="d5f-kc-9Rw"/>
+                            <constraint firstItem="Xfl-rm-7iA" firstAttribute="leading" secondItem="fQZ-KI-GVf" secondAttribute="leading" constant="20" id="fpM-sY-S1l"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="E5I-tJ-guP" secondAttribute="trailing" constant="20" id="h15-8L-aa2"/>
+                            <constraint firstItem="Xfl-rm-7iA" firstAttribute="bottom" secondItem="fQZ-KI-GVf" secondAttribute="bottom" constant="20" id="hO2-bl-3TS"/>
+                            <constraint firstItem="fQZ-KI-GVf" firstAttribute="trailing" secondItem="E5I-tJ-guP" secondAttribute="trailing" constant="20" id="kr4-Bi-3Xh"/>
                             <constraint firstItem="BrB-h1-WRS" firstAttribute="top" secondItem="U0K-SW-4ec" secondAttribute="top" id="rJc-2c-zQA"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="fQZ-KI-GVf"/>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="subviews">
+                                <exclude reference="BrB-h1-WRS"/>
+                            </mask>
+                        </variation>
                     </view>
                     <connections>
                         <outlet property="sceneView" destination="BrB-h1-WRS" id="5nT-qQ-ynl"/>
@@ -32,6 +87,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="34.782608695652179" y="18.75"/>
         </scene>
     </scenes>
 </document>
